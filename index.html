@@ -1,32 +1,75 @@
-              <!doctype html>
-              <html>
-                <head>
-                  <title>VyperHub | IOS</title>
-                  <link rel="stylesheet" type="text/css" href="style.css">
-                </head>
-                <body>
-                  <header>
-                    <a href="#" class="logo">Vyper</a>
-                    <ul>
-<li><a href="index.html" class="nav-button active">Home</a></li>
-              <li><a href="Dns.html" class="nav-button">Dns's</a></li>
-              <li><a href="Certificates.html" class="nav-button">Certificates</a></li>
-              <li><a href="Shop.html" class="nav-button">Shop</a></li>
-              <li><a href="Installs.html" class="nav-button">Installs</a></li>
-            </ul>
-          </header>
-          <section>
-            <img src="https://raw.githubusercontent.com/geololll/Vyper/main/Image/stars.png" id="stars">
-            <img src="https://github.com/geololll/Vyper/raw/main/Image/moon.png" id="moon">
-            <img src="https://github.com/geololll/Vyper/raw/main/Image/mountains_behind.png" id="mountains_behind">
-            <h2 id="text">VYPERHUB</h2>
-            <a href="#sec" id="btn">Explore</a>
-            <img src="https://github.com/geololll/Vyper/raw/main/Image/mountains_front.png" id="mountains_front">
-          </section>
-          <div class="sec" id="sec">
-            <h2>VyperHub</h2>
-            <p>We are a passionate and dedicated small team specializing in educating individuals on the art of sideloading and jailbreaking iOS devices.<br><br>Our mission is to empower users to unlock the full potential of their Apple devices, providing them with the knowledge and tools needed to customize and optimize their user experience.<br><br>Through detailed tutorials, expert guidance, and a supportive community, VyperHub strives to make the process of sideloading and jailbreaking accessible and straightforward for everyone, from beginners to advanced users.<br><br>Credits to @geololl for making everything.<br><br>Join Our Discord <br> <a href="https://discord.gg/nyQWZE46Yf">https://discord.gg/vyperhub</a></p>
-          </div>
-        </body>
-      </html>
-    </header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falling Stars</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0f0f0f;
+            color: #ffffff;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: fall linear infinite;
+            z-index: 0;
+        }
+        @keyframes fall {
+            to {
+                transform: translateY(calc(100vh + 10px));
+                opacity: 0;
+            }
+        }
+        .coming-soon {
+            font-size: 0.5em;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            cursor: pointer;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="coming-soon" onclick="window.location.href='https://discord.com/vyperhub'">Coming Soon..</div>
+    <div id="star-container"></div>
+
+    <script>
+        function createStar() {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 3 + 1;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.left = `${Math.random() * 100}vw`;
+            star.style.top = `-${Math.random() * 100}vh`;
+            star.style.animationDuration = `${Math.random() * 5 + 2}s`;
+            return star;
+        }
+
+        function addStars(num) {
+            const container = document.getElementById('star-container');
+            for (let i = 0; i < num; i++) {
+                const star = createStar();
+                container.appendChild(star);
+            }
+        }
+
+        addStars(100); 
+    </script>
+</body>
+</html>
